@@ -9,7 +9,13 @@ let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 
-inputBtn.addEventListener("click", function() {
-    console.log("Button clicked!")
-})
+// you can Push the value "www.awesomelead.com" to myArray when the input button is clicked 
+// // by pushing to myLeads, but this needs to become a variable
+// Push the value from the inputEl into the myLeads array 
+// instead of the hard-coded "www.awesomeleads.com" value
+// Google -> "get value from input field javascript"
 
+inputBtn.addEventListener("click", function() {
+    myLeads.push(inputEl.value)
+    console.log(myLeads)
+})

@@ -20,15 +20,15 @@ function add() {
 
 function subtract() {
     let result = num1 - num2;
-    sumEl.textContent = "Sum: " - result;
+    sumEl.textContent = "Sum: " + result;
 }
 
 function divide() {
     let result = num1 / num2;
-    sumEl.textContent = "Sum: " / result;
+    sumEl.textContent = "Sum: " + result;
 }
 
 function multiply() {
     let result = num1 * num2;
-    sumEl.textContent = "Sum: " * result;
+    sumEl.textContent = "Sum: " + result;
 }

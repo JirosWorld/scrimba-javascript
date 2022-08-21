@@ -5,7 +5,7 @@
 // myLeads -> should be assigned to an empty array
 // inputEl -> should be assigned to the text input field - make constant!
 
-let myLeads = []
+let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 
@@ -15,7 +15,18 @@ const inputBtn = document.getElementById("input-btn")
 // instead of the hard-coded "www.awesomeleads.com" value
 // Google -> "get value from input field javascript"
 
+// 2. Grab the unordered list and store it in a const variable called ulEl
+const ulEl = document.getElementById("ul-el")
+
+console.log(ulEl)
+
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     console.log(myLeads)
 })
+
+// Render the leads in the unordered list using ulEl.textContent
+for (let i = 0; i < myLeads.length; i++) {
+    // console.log(myLeads[i]) remove the Logout
+    ulEl.textContent += myLeads[i]
+}

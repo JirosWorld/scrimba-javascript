@@ -3,29 +3,40 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 
+// 1. Save a key-value pair in localStorage
+// 2. Refresh the page. Get the value and log it to the console
+// 3. Clear localStorage
+
+// HINTS:
+// localStorage.setItem(key, value)
+// localStorage.getItem(key)
+// localStorage.clear()
+// PS: both key and value need to be strings
+
+localStorage.setItem("myName", "Jiro Ghianni")
+
+let nameJ = localStorage.getItem("myName");
+console.log(nameJ);
+
+// localStorage.clear()
+
+
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
-    // 3. Clear out the input field
-    inputEl.value = '';
-    // 2. Call the renderLeads() function
-    renderLeads();
+    inputEl.value = ""
+    renderLeads()
 })
 
-// 1. Wrap the code below in a renderLeads() function
 function renderLeads() {
     let listItems = ""
     for (let i = 0; i < myLeads.length; i++) {
-        // Wrap the lead in an anchor tag (<a>) inside the <li>
-        // Can you make the link open in a new tab?
-        // listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
-           listItems += `
-           <li>
+        listItems += `
+            <li>
                 <a target='_blank' href='${myLeads[i]}'>
                     ${myLeads[i]}
                 </a>
             </li>
-           `
-        console.log(listItems)
+        `
     }
-    ulEl.innerHTML = listItems
+    ulEl.innerHTML = listItems  
 }

@@ -13,13 +13,16 @@ if (leadsFromLocalStorage) {
 }
 
 const tabs = [
-    {url: "https://www.linkedin.com/in/per-harald-borgen/"}
+    {url: "https://www.linkedin.com/in/jirosworld"}
 ]
 
 // 2. Listen for clicks on tabBtn. Log Per's LinkedIn URL to the console
 // combine array with dot notation to object-key
 tabBtn.addEventListener("click", function(){
-    console.log(tabs[0].url)
+    console.log(tabs[0].url);
+    myLeads.push(tabs[0].url);
+    localStorage.setItem("myLeads", JSON.stringify(myLeads) );
+    render(myLeads);
 })
 
 function render(leads) {

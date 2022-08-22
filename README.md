@@ -21,3 +21,4 @@ https://scrimba-javascript.netlify.app/
 * toggle Developer mode to On
 * Load the unpacked extension-folder
 * test by clicking the puzzle icon (it works!)
+* to clear all: double-click the Delete button

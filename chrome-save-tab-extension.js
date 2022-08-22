@@ -1,50 +1,41 @@
 let myLeads = []
+let oldLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
-// 1. Store the delete button in a deleteBtn variable
-// and change leadsFromLocalStorage from LET to CONST
 const deleteBtn = document.getElementById("delete-btn")
 const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
 }
 
-// 2. Listen for double clicks on the delete button (google it!)
-// 3. When clicked, clear localStorage, myLeads, and the DOM
-
-deleteBtn.addEventListener("dblclick", event => {
-  console.log("Double-click detected");
-  // Double-click detected
-  // clear localStorage, 
-  localStorage.clear();
-  console.log(myLeads);
-  // clear myLeads, 
-  myLeads = [];
-  // clear the DOM
-  // not like this: listItems = ""; just render the empty array:
-  renderLeads();
-})
-
-inputBtn.addEventListener("click", function() {
-    myLeads.push(inputEl.value)
-    inputEl.value = ""
-    localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-    renderLeads()
-})
-
-function renderLeads() {
+// refactoring: refactor renderLeads in such a way that it will render any array
+function render(leads) {
     let listItems = ""
-    for (let i = 0; i < myLeads.length; i++) {
+    for (let i = 0; i < leads.length; i++) {
         listItems += `
             <li>
-                <a target='_blank' href='${myLeads[i]}'>
-                    ${myLeads[i]}
+                <a target='_blank' href='${leads[i]}'>
+                    ${leads[i]}
                 </a>
             </li>
         `
     }
-    ulEl.innerHTML = listItems  
+    ulEl.innerHTML = listItems
 }
+
+deleteBtn.addEventListener("dblclick", function() {
+    localStorage.clear()
+    myLeads = []
+    render(myLeads)
+})
+
+// refactor to use the newly named render function
+inputBtn.addEventListener("click", function() {
+    myLeads.push(inputEl.value)
+    inputEl.value = ""
+    localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+    render(myLeads)
+})

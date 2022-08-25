@@ -45,4 +45,4 @@ run `npm start`.
 
 ### Build project
 
-hit the command, `$ npm build`, and webpack will create an optimised bundle in your project folder which can be deployed on any web server.
+hit the command, `$ npm run build`, and webpack will create an optimised bundle in your project folder which can be deployed on any web server.

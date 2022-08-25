@@ -8,7 +8,11 @@ Today we will be creating a simple React application but without using the creat
 
 ### Installation Phase
 
-$ npm init
+First navigate to the correct directory in your Terminal
+
+$ npm init 
+
+(this sets up the first data/version/name of your package)
 
 for creating a simple React application, we need two main libraries: React and ReactDOM. So let’s get them added as dependencies into our application using npm.
 
@@ -28,3 +32,17 @@ That was all for installation (In the case of babel, we have loaded the core bab
 Let’s start by adding a webpack.config.js file in the root of our application structure
 
 The last thing we need to do is create a .babelrc file to use the babel preset we installed and take care of the ES6 classes and import statements in our code.
+
+### React Code
+
+start by requiring both React and ReactDOM - create index,js and App.js files
+
+enable hot reloading by adding script values in the package.json file. Remove the test property in the scripts object of your package.json file and add 'start and 'build'' scripts.
+
+### View app on server
+
+run `npm start`.
+
+### Build project
+
+hit the command, `$ npm build`, and webpack will create an optimised bundle in your project folder which can be deployed on any web server.
